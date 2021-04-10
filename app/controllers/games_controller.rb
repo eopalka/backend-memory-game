@@ -5,7 +5,7 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
 
-    render json: @games, include: [:user]
+    render json: @games, except: [:created_at, :updated_at], include: [:user]
   end
 
   # GET /games/1
@@ -46,6 +46,6 @@ class GamesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def game_params
-      params.require(:game).permit(:timer, :moves, :user_id, :user_attributes)
+      params.require(:game).permit(:timer, :moves, :user_id, user_attributes:[:username, :games_played, :id])
     end
 end
