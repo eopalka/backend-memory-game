@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  timer: 2021-04-03 18:49:09
   moves: 1
   user: one
 
 two:
-  timer: 2021-04-03 18:49:09
   moves: 1
   user: two

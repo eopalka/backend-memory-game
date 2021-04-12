@@ -12,7 +12,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create game" do
     assert_difference('Game.count') do
-      post games_url, params: { game: { moves: @game.moves, timer: @game.timer, user_id: @game.user_id } }, as: :json
+      post games_url, params: { game: { moves: @game.moves, user_id: @game.user_id } }, as: :json
     end
 
     assert_response 201
@@ -24,7 +24,7 @@ class GamesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update game" do
-    patch game_url(@game), params: { game: { moves: @game.moves, timer: @game.timer, user_id: @game.user_id } }, as: :json
+    patch game_url(@game), params: { game: { moves: @game.moves, user_id: @game.user_id } }, as: :json
     assert_response 200
   end
 
